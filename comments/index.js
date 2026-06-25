@@ -46,10 +46,13 @@ app.post('/events', async (req, res) => {
                 postId,
                 status
             }
+        }).catch((err) => {
+            console.log(err.message);
         });
     }
     console.log('Event received:', type);
-})
+    res.send({});
+});
 
 app.listen(4001, () => {
     console.log("Listening on port 4001");
